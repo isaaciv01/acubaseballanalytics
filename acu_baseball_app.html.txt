@@ -1,0 +1,151 @@
+        <!-- Dashboard Page -->
+        <div id="dashboard" class="page active">
+            <!-- Year Comparison Toggle -->
+            <div class="team-selector" style="margin-bottom: 2rem;">
+                <button class="team-btn active" onclick="toggleYear('current')">2025 Season (Current)</button>
+                <button class="team-btn" onclick="toggleYear('comparison')">vs 2024 Comparison</button>
+                <button class="team-btn" onclick="toggleYear('lastYear')">2024 Season (Baseline)</button>
+            </div>
+            
+            <div id="current-season" class="season-view">
+                <h3 style="color: #ff6b35; margin-bottom: 1rem;">📊 Current Season Progress</h3>
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <div class="card-title">🏆 Season Record</div>
+                        </div>
+                        <div class="stat-value" id="current-record">0-0</div>
+                        <div class="stat-label">Overall Record (2024: 40-16-1)</div>
+                        <div class="stat-change" id="record-change">Season just starting</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <div class="card-title">⚾ Team ERA</div>
+                        </div>
+                        <div class="stat-value" id="current-era">--</div>
+                        <div class="stat-label">Earned Run Average (2024: 4.47)</div>
+                        <div class="stat-change" id="era-change">Awaiting data</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <div class="card-title">🥎 Batting Average</div>
+                        </div>
+                        <div class="stat-value" id="current-avg">---</div>
+                        <div class="stat-label">Team Batting Average (2024: .320)</div>
+                        <div class="stat-change" id="avg-change">Awaiting data</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <div class="card-title">💪 Team OPS</div>
+                        </div>
+                        <div class="stat-value" id="current-ops">---</div>
+                        <div class="stat-label">On-base Plus Slugging (2024: .922)</div>
+                        <div class="stat-change" id="ops-change">Awaiting data</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="comparison-view" class="season-view" style="display: none;">
+                <h3 style="color: #ff6b35; margin-bottom: 1rem;">📈 Year-over-Year Comparison</h3>
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <div class="card-title">🏆 Win Percentage</div>
+                        <div class="comparison-stats">
+                            <div class="year-stat">
+                                <span class="year-label">2024:</span>
+                                <span class="year-value">.702</span>
+                            </div>
+                            <div class="year-stat">
+                                <span class="year-label">2025:</span>
+                                <span class="year-value">TBD</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-title">⚾ Pitching Comparison</div>
+                        <div class="comparison-stats">
+                            <div class="year-stat">
+                                <span class="year-label">2024 ERA:</span>
+                                <span class="year-value">4.47</span>
+                            </div>
+                            <div class="year-stat">
+                                <span class="year-label">2025 ERA:</span>
+                                <span class="year-value">TBD</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-title">🥎 Offensive Comparison</div>
+                        <div class="comparison-stats">
+                            <div class="year-stat">
+                                <span class="year-label">2024 AVG:</span>
+                                <span class="year-value">.320</span>
+                            </div>
+                            <div class="year-stat">
+                                <span class="year-label">2025 AVG:</span>
+                                <span class="year-value">TBD</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-title">📊 Advanced Metrics</div>
+                        <div class="comparison-stats">
+                            <div class="year-stat">
+                                <span class="year-label">2024 OPS:</span>
+                                <span class="year-value">.922</span>
+                            </div>
+                            <div class="year-stat">
+                                <span class="year-label">2025 OPS:</span>
+                                <span class="year-value">TBD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="last-year-view" class="season-view" style="display: none;">
+                <h3 style="color: #ff6b35; margin-bottom: 1rem;">🏆 2024 Season Results (Baseline)</h3>
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <div class="card-title">🏆 Final Record</div>
+                        </div>
+                        <div class="stat-value">40-16-1</div>
+                        <div class="stat-label">.702 Win Percentage</div>
+                        <div class="stat-change positive">Strong season finish</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <div class="card-title">⚾ Team ERA</div>
+                        </div>
+                        <div class="stat-value">4.47</div>
+                        <div class="stat-label">Earned Run Average</div>
+                        <div class="stat-change">573 team strikeouts</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <div class="card-title">🥎 Batting Average</div>
+                        </div>
+                        <div class="stat-value">.320</div>
+                        <div class="stat-label">Team Batting Average</div>
+                        <div class="stat-change positive">64 home runs, 520 runs scored</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <div class="card-title">💪 Team OPS</div>
+                        </div>
+                        <div class="stat-value">.922</div>
+                        <div class="stat-label">On-base Plus Slugging</div>
+                        <div class="stat-change positive">.502 SLG + .420 OBP</div>
+                    </div>
+                </div>
+            </div></div>
